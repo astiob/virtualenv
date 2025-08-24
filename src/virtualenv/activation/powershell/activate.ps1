@@ -1,5 +1,5 @@
 $script:THIS_PATH = $myinvocation.mycommand.path
-$script:BASE_DIR = Split-Path (Resolve-Path "$THIS_PATH/..") -Parent
+$script:BASE_DIR = Split-Path (Resolve-Path -LiteralPath "$THIS_PATH/..") -Parent
 
 function global:deactivate([switch] $NonDestructive) {
     if (Test-Path variable:_OLD_VIRTUAL_PATH) {
